@@ -14,6 +14,7 @@ Clone the whole repository using ```git clone https://github.com/SoulflareRC/Squ
 - opencv
 - PyTorch
 - gradio
+- skimage
 
 ### Usage
 
