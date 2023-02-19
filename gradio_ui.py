@@ -6,6 +6,7 @@ import cv2
 import urllib
 import numpy as np
 from skimage import io
+import os
 from yolov8.dataset import *
 from datetime import datetime
 import gradio as gr
@@ -35,7 +36,8 @@ class ui_wrapper(object):
         return imgd,hint,gallery_out
     def infer_vid(self,vid):
         vid_run_dir = "runs/detect"
-        shutil.rmtree(vid_run_dir)
+        if os.path.exists(vid_run_dir):
+            shutil.rmtree(vid_run_dir)
         pred = self.model.predict(source=vid,save=True)
         p = pathlib.Path(vid_run_dir).joinpath("predict")
         vid =list(p.iterdir())[0].resolve()

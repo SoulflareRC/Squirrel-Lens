@@ -115,4 +115,4 @@ def chonky():
     file = images[idx]
 
     return send_file(file,mimetype="image/jpg")
-app.run(port=8000,debug=True)
+app.run(port=8000)
